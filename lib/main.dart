@@ -1,19 +1,37 @@
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, deprecated_member_use
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var questions = [
+      "what's your fav color? ",
+      "what's your name?",
+      "what's fav animal?"
+    ];
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text("Funny App"),
+        title: const Text("Funny App"),
       ),
-      body: Text("My Body"),
+      body: Column(children: [
+        const Text("the questions"),
+        ElevatedButton(
+          child: Text('Answer 1'),
+          onPressed: () {},
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Answer 2'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Answer 3'),
+        )
+      ]),
     ));
   }
 }

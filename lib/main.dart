@@ -4,7 +4,14 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+var quesionIndex = 0;
+
 class MyApp extends StatelessWidget {
+  void answerQuestions() {
+    quesionIndex += quesionIndex;
+    print(quesionIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     var questions = [
@@ -18,18 +25,18 @@ class MyApp extends StatelessWidget {
         title: const Text("Funny App"),
       ),
       body: Column(children: [
-        const Text("the questions"),
+        Text(questions[quesionIndex]),
         ElevatedButton(
-          child: Text('Answer 1'),
-          onPressed: () {},
+          onPressed: answerQuestions,
+          child: const Text('Answer 1'),
         ),
         ElevatedButton(
-          onPressed: () {},
-          child: Text('Answer 2'),
+          onPressed: answerQuestions,
+          child: const Text('Answer 2'),
         ),
         ElevatedButton(
-          onPressed: () {},
-          child: Text('Answer 3'),
+          onPressed: answerQuestions,
+          child: const Text('Answer 3'),
         )
       ]),
     ));

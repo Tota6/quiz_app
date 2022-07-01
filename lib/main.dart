@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
+import './questions.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         title: const Text("Funny App"),
       ),
       body: Column(children: [
-        Text(questions[_quesionIndex]),
+        Question(questions[_quesionIndex]),
         ElevatedButton(
           onPressed: answerQuestions,
           child: const Text('Answer 1'),
